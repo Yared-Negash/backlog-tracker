@@ -1,9 +1,13 @@
 import logo from './logo.svg';
+import Header from "./components/Header"
+import IntroJumbo from "./components/IntroJumbo"
 import './App.css';
 
 function App() {
   return (
     <div className="App">
+    <Header />
+    <IntroJumbo />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
