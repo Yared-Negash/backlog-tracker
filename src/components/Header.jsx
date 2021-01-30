@@ -1,20 +1,39 @@
-import React from "react";
+import React,{useState} from "react";
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import FormControl from 'react-bootstrap/FormControl';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Container from 'react-bootstrap/Container'
+
 
 function Header() {
+
+  const [log,setLog] = useState("");
+
+  function logChangeHandler(event){
+    const newLog = event.target.value;
+    setLog(newLog);
+  }
+
+  function logOnClickHandler(event){
+    alert(log);
+
+    setLog("");
+    event.preventDefault();
+  }
+
   return (
-  <Navbar bg="dark" expand="lg" sticky="top">
-    <Navbar.Brand href="#home">backLOG</Navbar.Brand>
-    <Form inline pull-right action="http://localhost:3000/findLog" method="GET">
-      <FormControl type="text" placeholder="Find a Log" name="searchedLog" className="mr-sm-2" />
-      <Button variant="outline-success">Search</Button>
-    </Form>
-  </Navbar>);
+    <Navbar bg="dark" expand="lg" sticky="top">
+      <Container fluid >
+        <Navbar.Brand className="mr-sm-6" href="#home">🪓backLOG</Navbar.Brand>
+        <Form className="mr-sm-6" inline onSubmit={logOnClickHandler}action="http://localhost:3000/findLog" method="GET">
+          <img src="/public/right-pointing-magnifying-glass_1f50e.png" alt="magnifying-glass"></img>
+          <FormControl type="text submit" placeholder="Find a Log" name="searchedLog" className="mr-sm-2" value={log} onChange={logChangeHandler}/>
+        </Form>
+      </Container>
+    </Navbar>);
 }
 
 export default Header;
