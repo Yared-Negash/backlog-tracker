@@ -4,7 +4,7 @@ import FormControl from 'react-bootstrap/FormControl';
 import Button from 'react-bootstrap/Button';
 
 
-function SearchLog() {
+function SearchLog(props) {
     const [log, setLog] = useState("");
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
@@ -14,13 +14,13 @@ function SearchLog() {
     const port = process.env.LOCATION || 3000
     const url = `${location}:${port}/findLog`;
 
+    
     function logChangeHandler(event) {
         const newLog = event.target.value;
         setLog(newLog);
     }
 
     function logOnSubmitHandler(event) {
-        alert(log);
 
         fetch(`${url}?searchedLog=${log}`)
             .then(res => res.json())
@@ -28,7 +28,7 @@ function SearchLog() {
                 (result) => {
                     setIsLoaded(true);
                     setItems(result);
-                    alert(result.logTitle);
+                    props.setLogList(result);
                     setLog("");
                 },
                 // Note: it's important to handle errors here

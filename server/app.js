@@ -40,13 +40,7 @@ app.get('/findLog', (req, res) => {
         response.on('end', () => {
             const logJSON = JSON.parse(body);
             console.log(logJSON);
-            const logData = { logTitle: logJSON.Title, logPlot: logJSON.Plot, Release: logJSON.Released, logPoster: logJSON.Poster };
-            /*  res.write(`<h1>You searched for ${logJSON.Title}, which released on ${logJSON.Released}</h1>`);
-             res.write(`<p>Synopsis: ${logJSON.Plot}</p>`);
-             res.write(`<img src="${logJSON.Poster}" alt="Poster not found">`);
-             res.write(`<br><br><br><form action="http://localhost:3000" method="GET">
-             <button class="btn btn-outline-success" type="submit">Return to Sawmill</button>
-           </form>`) */
+            const logData = { logTitle: logJSON.Title, logPlot: logJSON.Plot, logReleaseDate: logJSON.Released, logPoster: logJSON.Poster };
             res.send(logData);
 
         }).on('error', (error) => {
