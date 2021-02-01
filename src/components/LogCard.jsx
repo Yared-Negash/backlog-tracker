@@ -1,4 +1,6 @@
 import React from 'react';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 function LogCard(props) {
     const logTitle = props.logTitle;
@@ -8,12 +10,17 @@ function LogCard(props) {
 
     return (
         <div>
-            <h1>You searched for {logTitle ? logTitle : "Title Not Found"}, which released on {logReleaseDate ? logReleaseDate : "Release Date Not Found"}</h1>
-            <p>Synopsis: {logPlot ? logPlot : "Synopsis Not Found"}</p>
-            <img src={logPoster} alt="Poster not found"></img>
+            <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src={logPoster} />
+                <Card.Body>
+                    <Card.Title>{logTitle ? logTitle : "Title Not Found"}</Card.Title>
+                    <Card.Text>{logReleaseDate ? (logReleaseDate.split(" "))[1]+" "+(logReleaseDate.split(" "))[2] : "Synopsis Not Found"}</Card.Text>
+                    <Card.Text>{logPlot ? logPlot : "Synopsis Not Found"}</Card.Text>
+                    <Button variant="primary">Go somewhere</Button>
+                </Card.Body>
+            </Card>
         </div>
     )
 
 }
-
 export default LogCard;
