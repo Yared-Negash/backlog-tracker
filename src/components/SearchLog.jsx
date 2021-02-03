@@ -3,6 +3,8 @@ import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 import Button from 'react-bootstrap/Button';
 
+import logo from '../images/right-pointing-magnifying-glass_1f50e.png';
+import "./css/SearchLog.css"
 
 function SearchLog(props) {
     const [log, setLog] = useState("");
@@ -46,7 +48,7 @@ function SearchLog(props) {
     return (
         <div>
             <Form className="mr-sm-6" inline onSubmit={logOnSubmitHandler}>
-                <img src="/public/right-pointing-magnifying-glass_1f50e.png" alt="magnifying-glass"></img>
+                <img src={logo} alt="magnifying-glass" class="magGlass"/>
                 <FormControl type="text submit" placeholder="Find a Log" name="searchedLog" className="mr-sm-2" value={log} onChange={logChangeHandler} />
                 <Button type="submit">Search</Button>
             </Form>
