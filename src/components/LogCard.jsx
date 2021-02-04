@@ -14,7 +14,7 @@ function LogCard(props) {
                 <Card.Img variant="top" src={logPoster} />
                 <Card.Body>
                     <Card.Title>{logTitle ? logTitle : "Title Not Found"}</Card.Title>
-                    <Card.Text>{logReleaseDate ? (logReleaseDate.split(" "))[1]+" "+(logReleaseDate.split(" "))[2] : "Synopsis Not Found"}</Card.Text>
+                    <Card.Text>{logReleaseDate ? logReleaseDate : ""}</Card.Text>
                     <Card.Text>{logPlot ? logPlot : "Synopsis Not Found"}</Card.Text>
                     <Button variant="primary">Go somewhere</Button>
                 </Card.Body>

@@ -30,7 +30,7 @@ app.get('/findLog', (req, res) => {
     const logTitle = req.query.searchedLog;
     let body = "";
     console.log(`${logTitle} is the searched string`)
-    const request = https.request(baseOMDBLink + "&t=" + logTitle, (response) => {
+    const request = https.request(baseOMDBLink + "&s=" + logTitle, (response) => {
         console.log(res.statusCode);
         console.log(res.header);
 
@@ -38,10 +38,15 @@ app.get('/findLog', (req, res) => {
             body += data;
         })
         response.on('end', () => {
-            const logJSON = JSON.parse(body);
+            const logJSON = JSON.parse(body);        
+            const logArray = logJSON.Search;
+            let updatedLogArray = [];
             console.log(logJSON);
-            const logData = { logTitle: logJSON.Title, logPlot: logJSON.Plot, logReleaseDate: logJSON.Released, logPoster: logJSON.Poster };
-            res.send(logData);
+            
+            logArray.map(element =>{
+                updatedLogArray.push({ logTitle: element.Title, logPlot: "test", logReleaseDate: element.Year, logPoster: element.Poster });
+            })
+            res.send(updatedLogArray);
 
         }).on('error', (error) => {
             console.error(error.message);

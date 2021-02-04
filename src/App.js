@@ -9,7 +9,7 @@ function App() {
   const [logList, setLogList] = useState([]);
 
   function updateLogList(item){
-    setLogList([item]);
+    setLogList([...item]);
   }
   return (
     <div className="App">
