@@ -40,6 +40,11 @@ app.get('/findLog', (req, res) => {
         response.on('end', () => {
             const logJSON = JSON.parse(body);        
             const logArray = logJSON.Search;
+            if(!logArray){
+                console.log(`${logTitle} was not found`);
+                res.send([]);
+                return;
+            }
             let updatedLogArray = [];
             console.log(logJSON);
             
