@@ -2,6 +2,9 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
+import noPoster from '../images/noPoster.png'
+
+
 function LogCard(props) {
     const logTitle = props.logTitle;
     const logReleaseDate = props.logReleaseDate;
@@ -11,7 +14,7 @@ function LogCard(props) {
     return (
         <div>
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={logPoster} />
+                <Card.Img variant="top" src={logPoster === "N/A" ? noPoster : logPoster} />
                 <Card.Body>
                     <Card.Title>{logTitle ? logTitle : "Title Not Found"}</Card.Title>
                     <Card.Text>{logReleaseDate ? logReleaseDate : ""}</Card.Text>
