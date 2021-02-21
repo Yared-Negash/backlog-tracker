@@ -6,8 +6,11 @@ const cors = require('cors');
 const https = require('https');
 const app = express();
 
+//only allowing requests from the front end with this url
+const origin = process.env.origin || 'http://localhost:3001'
+console.log(`origin: ${origin}`);
 app.use(cors({
-    origin: 'http://localhost:3001'
+    origin: origin
 }));
 
 
@@ -15,8 +18,6 @@ const port = process.env.port || 3000;
 const baseOMDBLink = "https://www.omdbapi.com/?apikey=" + process.env.OMDB_KEY;
 
 console.log(baseOMDBLink);
-console.log(process.env.port + " port");
-console.log(process.env.FOO);
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //home page
@@ -62,5 +63,8 @@ app.get('/findLog', (req, res) => {
     request.end();
 });
 app.listen(port, () => {
-    console.log(`Lumberjacks are awaiting your orders at http://localhost:${port}`)
+    if(origin.includes("localhost"))
+        console.log(`Lumberjacks are awaiting your orders at http://localhost:${port}`)
+    else
+        console.log(`Lumberjacks are awaiting your order on port ${port} (prod)`);
 })
