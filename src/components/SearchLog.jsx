@@ -12,7 +12,7 @@ function SearchLog(props) {
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
 
-    const location = process.env.LOCATION || 'http://localhost'
+    const location = process.env.REACT_APP_LOCATION || 'http://localhost'
     const port = process.env.LOCATION || 3000
     const url = location.includes("localhost")? `${location}:${port}/findLog`: `${location}/findLog`;
     
