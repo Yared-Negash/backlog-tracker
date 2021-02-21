@@ -14,8 +14,8 @@ function SearchLog(props) {
 
     const location = process.env.LOCATION || 'http://localhost'
     const port = process.env.LOCATION || 3000
-    const url = `${location}:${port}/findLog`;
-
+    const url = location.includes("localhost")? `${location}:${port}/findLog`: `${location}/findLog`;
+    
     
     function logChangeHandler(event) {
         const newLog = event.target.value;
