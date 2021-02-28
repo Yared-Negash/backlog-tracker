@@ -7,9 +7,8 @@ import SavedLogs from './components/SavedLogs'
 
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
-  Link
+  BrowserRouter
 } from "react-router-dom";
 import './App.css';
 import { useState } from 'react';
@@ -21,20 +20,17 @@ function App() {
     setLogList([...item]);
   }
 
-  function logListComponent() {
-    return (<LogList logCardList={logList} />);
-  }
-
   return (
     <div className="App">
-      <Header
-        searchNewLog={updateLogList}
-      />
-      <Router>
-        <Route path='/' exact component={SavedLogs} />
-        <Route path='/login' exact component={Login} />
-        <Route path='/search'  component={logListComponent} />
-      </Router>
+      <BrowserRouter>
+        <Router>
+          <Header />
+          <Route path='/' exact component={SavedLogs} />
+          <Route path='/login' exact component={Login} />
+          <Route path='/search'  exact component={LogList} />
+          <Route path='/search/:id' component={LogList} />
+        </Router>
+      </BrowserRouter>
     </div>
   );
 }
