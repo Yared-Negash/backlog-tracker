@@ -16,6 +16,8 @@ function LogList(props) {
     //useEffect executes after a component gets rendered. Second parameter (the empty array) makes sure it only runs once. Otherwise
     //It would be an infinite call: https://blog.bitsrc.io/fetching-data-in-react-using-hooks-c6fdd71cb24a
     useEffect(()=>{
+        
+        setLog(props.match.params.id);
         fetch(`${url}?searchedLog=${log}`)
         .then(res => res.json())
         .then(
@@ -29,7 +31,8 @@ function LogList(props) {
                 console.log("test");
             }
         )
-    }, [])
+    }, [log,props.match.params.id])
+
 
 
     if (!logList || logList.length == 0) {

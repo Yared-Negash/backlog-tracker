@@ -9,7 +9,7 @@ import { useHistory } from "react-router-dom";
 function Header(props) {
   let history = useHistory();
   function getSearchResult(searchLog) {
-    history.push(`/search/${searchLog}`);
+    history.replace(`/search/${searchLog}`);
   }
   return (
     <Navbar bg="dark" expand="lg" sticky="top">
