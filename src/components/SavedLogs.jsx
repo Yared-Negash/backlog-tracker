@@ -1,9 +1,13 @@
 import React from "react";
+import IntroJumbo from '../components/IntroJumbo'
 
 function SavedLogs(props) {
   
   return (
-    <h1>Saved Logs are here</h1>);
+      <div>
+          <IntroJumbo />
+      </div>
+  );
 }
 
 export default SavedLogs;

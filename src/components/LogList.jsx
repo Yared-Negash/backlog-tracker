@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import IntroJumbo from "./IntroJumbo"
+import EmptySearch from "./EmptySearch"
 
 import LogCard from "./LogCard"
 import { Container, Row, Col } from "react-bootstrap";
@@ -38,7 +38,7 @@ function LogList(props) {
     if (!logList || logList.length == 0) {
         return (
             <div>
-                <IntroJumbo />
+                <EmptySearch />
             </div>
         );
     }
