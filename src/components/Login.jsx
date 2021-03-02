@@ -14,14 +14,15 @@ function Login() {
             alert(`email ${emailState} and pass ${passwordState}`);
             const options = {
                 method: "POST",
-                header: {
-                    "Content-Type" : "application/json"
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json'
                 },
                 body: JSON.stringify({
                     emailAddress: emailState,
-                    userPassword: setPasswordState
+                    userPassword: passwordState
                 })
-            }
+            };
             fetch(url, options)
                 .then(res => res.json())
                 .then(
@@ -51,9 +52,9 @@ function Login() {
             <h1>Login Page</h1>
             <form onSubmit={loginHandler}>
                 <label for="email">Email Address:</label>
-                <input type="text" id="email" name="email" onChange={emailChangeHandler} required />
+                <input type="text" id="email" name="email" value={emailState} onChange={emailChangeHandler} required />
                 <label for="pwd">Password:</label>
-                <input type="password" id="pwd" name="pwd" onChange={passwordChangeHandler} required />
+                <input type="password" id="pwd" name="pwd" value={passwordState} onChange={passwordChangeHandler} required />
                 <button type="submit" onClick={loginHandler}>Login</button>
             </form>
         </div>
