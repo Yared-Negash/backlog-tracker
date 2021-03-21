@@ -1,13 +1,13 @@
 import { useState, React } from 'react'
 const location = process.env.REACT_APP_LOCATION || 'http://localhost'
 const port = process.env.LOCATION || 3000
-const url = location.includes("localhost") ? `${location}:${port}/login` : `${location}/login`;
+const url = location.includes("localhost") ? `${location}:${port}/register` : `${location}/register`;
 
-function Login() {
+function Register() {
     const [emailState, setEmailState] = useState("");
     const [passwordState, setPasswordState] = useState("");
 
-    function loginHandler(event) {
+    function registerHandler(event) {
         if (!emailState || !passwordState)
             alert(`Please fill in both entries`);
         else {
@@ -49,17 +49,17 @@ function Login() {
     }
     return (
         <div>
-            <h1>Login Page</h1>
-            <form onSubmit={loginHandler}>
+            <h1>Register Page</h1>
+            <form onSubmit={registerHandler}>
                 <label htmlFor="email">Email Address:</label>
                 <input type="text" id="email" name="email" value={emailState} onChange={emailChangeHandler} required />
                 <label htmlFor="pwd">Password:</label>
                 <input type="password" id="pwd" name="pwd" value={passwordState} onChange={passwordChangeHandler} required />
-                <button type="submit" onClick={loginHandler}>Login</button>
+                <button type="submit" onClick={registerHandler}>Register</button>
             </form>
         </div>
     );
 }
 
 
-export default Login;
+export default Register;

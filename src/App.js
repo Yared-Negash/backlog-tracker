@@ -1,7 +1,7 @@
 import Header from "./components/Header"
 import IntroJumbo from "./components/IntroJumbo"
 import LogList from "./components/LogList"
-import Login from './components/Login'
+import Register from './components/Register'
 import Home from './components/Home'
 import SavedLogs from './components/SavedLogs'
 
@@ -26,7 +26,7 @@ function App() {
         <Router>
           <Header />
           <Route path='/' exact component={SavedLogs} />
-          <Route path='/login' exact component={Login} />
+          <Route path='/register' exact component={Register} />
           <Route path='/search'  exact component={LogList} />
           <Route path='/search/:id' component={LogList} />
         </Router>

@@ -16,7 +16,7 @@ function Header(props) {
       <Container fluid >
         <Navbar.Brand className="mr-sm-6" href="/">🪓backLOG</Navbar.Brand>
         <SearchLog getSearchResult={getSearchResult} />
-        <Nav.Link href="/Login">Login</Nav.Link>
+        <Nav.Link href="/Register">Register</Nav.Link>
       </Container>
     </Navbar>);
 }
