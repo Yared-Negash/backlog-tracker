@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav'
 import Container from 'react-bootstrap/Container';
 import SearchLog from "./SearchLog";
 import { useHistory } from "react-router-dom";
+import "./css/Header.css"
 
 
 function Header(props) {
@@ -16,7 +17,10 @@ function Header(props) {
       <Container fluid >
         <Navbar.Brand className="mr-sm-6" href="/">🪓backLOG</Navbar.Brand>
         <SearchLog getSearchResult={getSearchResult} />
-        <Nav.Link href="/Register">Register</Nav.Link>
+        <div className="authButtons">
+          <Nav.Link href="/Register">Register</Nav.Link>
+          <Nav.Link href="/Login">Login</Nav.Link>
+        </div>
       </Container>
     </Navbar>);
 }
