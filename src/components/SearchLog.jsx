@@ -27,7 +27,7 @@ function SearchLog(props) {
     return (
         <div>
             <Form className="mr-sm-6" inline onSubmit={logOnSubmitHandler}>
-                <img src={logo} alt="magnifying-glass" class="magGlass" />
+                <img src={logo} alt="magnifying-glass" className="magGlass" />
                 <FormControl type="text submit" placeholder="Find a Log"  className="mr-sm-2" value={log} onChange={logChangeHandler}/>
                 <Button onClick={logOnSubmitHandler} type="submit">Search</Button>
             </Form>

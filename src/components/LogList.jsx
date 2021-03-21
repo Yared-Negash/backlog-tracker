@@ -46,9 +46,9 @@ function LogList(props) {
     return (
         <Container >
             <Row>
-                {logList.map((element) => {
+                {logList.map((element,i) => {
                     return (
-                        <Col sm={12} md={6} lg={4}>
+                        <Col sm={12} md={6} lg={4} key={i}>
                             <LogCard
                                 logTitle={element.logTitle}
                                 logPlot={element.logPlot}
