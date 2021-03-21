@@ -51,9 +51,9 @@ function Login() {
         <div>
             <h1>Login Page</h1>
             <form onSubmit={loginHandler}>
-                <label for="email">Email Address:</label>
+                <label htmlFor="email">Email Address:</label>
                 <input type="text" id="email" name="email" value={emailState} onChange={emailChangeHandler} required />
-                <label for="pwd">Password:</label>
+                <label htmlFor="pwd">Password:</label>
                 <input type="password" id="pwd" name="pwd" value={passwordState} onChange={passwordChangeHandler} required />
                 <button type="submit" onClick={loginHandler}>Login</button>
             </form>
