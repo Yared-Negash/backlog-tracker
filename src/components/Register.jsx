@@ -27,7 +27,11 @@ function Register() {
                 .then(res => res.json())
                 .then(
                     (result) => {
-                        alert(JSON.stringify(result));
+                        if (!result.registerStatus) {
+                            alert("A user with that email may already exist. Please try again or use a different email");
+                            return;
+                        }
+                        window.location.replace("/Login");
                     },
                     // Note: it's important to handle errors here
                     // instead of a catch() block so that we don't swallow
