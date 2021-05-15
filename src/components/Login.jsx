@@ -14,6 +14,7 @@ function Login() {
             alert(`email ${emailState} and pass ${passwordState}`);
             const options = {
                 method: "POST",
+                credentials: 'include',
                 headers: {
                     'Content-Type': 'application/json',
                     Accept: 'application/json'
