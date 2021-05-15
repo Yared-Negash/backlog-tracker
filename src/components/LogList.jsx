@@ -18,7 +18,10 @@ function LogList(props) {
     useEffect(()=>{
         
         setLog(props.match.params.id);
-        fetch(`${url}?searchedLog=${log}`)
+        const options = {
+            credentials: 'include',
+        }
+        fetch(`${url}?searchedLog=${log}`,options)
         .then(res => res.json())
         .then(
             (result) => {

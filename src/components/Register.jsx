@@ -11,7 +11,6 @@ function Register() {
         if (!emailState || !passwordState)
             alert(`Please fill in both entries`);
         else {
-            alert(`email ${emailState} and pass ${passwordState}`);
             const options = {
                 method: "POST",
                 headers: {

@@ -11,7 +11,6 @@ function Login() {
         if (!emailState || !passwordState)
             alert(`Please fill in both entries`);
         else {
-            alert(`email ${emailState} and pass ${passwordState}`);
             const options = {
                 method: "POST",
                 credentials: 'include',
@@ -28,7 +27,11 @@ function Login() {
                 .then(res => res.json())
                 .then(
                     (result) => {
-                        alert(JSON.stringify(result));
+                        if (!result.loginStatus) {
+                            alert("Incorrect username or password. Please try again.");
+                            return;
+                        }
+                        window.location.replace("/");
                     },
                     // Note: it's important to handle errors here
                     // instead of a catch() block so that we don't swallow
