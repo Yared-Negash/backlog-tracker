@@ -57,6 +57,7 @@ function LogList(props) {
                                 logPlot={element.logPlot}
                                 logReleaseDate={element.logReleaseDate}
                                 logPoster={element.logPoster}
+                                logID={element.logID}
                             />
                         </Col>
                         )
