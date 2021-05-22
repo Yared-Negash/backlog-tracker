@@ -14,11 +14,8 @@ function SavedLogCard(props) {
     const logPlot = props.logPlot;
     const logPoster = props.logPoster;
     const logId = props.logId;
-    debugger;
 
     function removeBackLogHandler(event){
-        alert(`${logTitle} was selected - ${logId}`);
-        debugger;
         const newLog = {
             logId: logId,
             logTitle: logTitle,

@@ -24,7 +24,6 @@ function SavedLogs(props) {
           if (!result.length)
             return;
 
-            debugger;
           setbackLog(true);
           setbackLogList([...result]);
         },

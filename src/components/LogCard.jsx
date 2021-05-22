@@ -17,7 +17,6 @@ function LogCard(props) {
 
 
     function addBackLogHandler(event){
-        alert(`${logTitle} was selected - ${logId}`);
         const newLog = {
             logId: logId,
             logTitle: logTitle,
