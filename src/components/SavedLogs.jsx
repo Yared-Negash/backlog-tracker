@@ -11,7 +11,11 @@ const url = location.includes("localhost") ? `${location}:${port}` : `${location
 function SavedLogs(props) {
   const [hasBackLog, setbackLog] = useState(false);
   const [backLogList, setbackLogList] = useState([]);
+  const [isDeleted, setDeletedLog] = useState(false);
 
+  function renderDeletedLog(){
+    setDeletedLog(true)
+  }
   useEffect(() => {
     const options = {
       credentials: 'include',
@@ -21,11 +25,15 @@ function SavedLogs(props) {
       .then(
         (result) => {
           console.log(result);
-          if (!result.length)
+          if (!result.length){
+            setbackLogList([]);
+            setbackLog(false);
             return;
-
+          }
+            
           setbackLog(true);
           setbackLogList([...result]);
+          setDeletedLog(false);
         },
         // Note: it's important to handle errors here
         // instead of a catch() block so that we don't swallow
@@ -34,7 +42,7 @@ function SavedLogs(props) {
           console.log("test");
         }
       )
-  },[])
+  },[isDeleted])
 
 
   if (!hasBackLog) {
@@ -58,6 +66,7 @@ function SavedLogs(props) {
                     logReleaseDate={element.logReleaseDate}
                     logPoster={element.logPoster}
                     logId={element.logId}
+                    isDeleted={renderDeletedLog}
                   />
                 </Col>
               )
