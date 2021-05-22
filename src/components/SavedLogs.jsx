@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import IntroJumbo from '../components/IntroJumbo'
 import { Container, Row, Col } from "react-bootstrap";
 
-import LogCard from "./LogCard"
+import SavedLogCard from "./SavedLogCard"
 
 const location = process.env.REACT_APP_LOCATION || 'http://localhost'
 const port = process.env.LOCATION || 3000
@@ -23,6 +23,8 @@ function SavedLogs(props) {
           console.log(result);
           if (!result.length)
             return;
+
+            debugger;
           setbackLog(true);
           setbackLogList([...result]);
         },
@@ -51,12 +53,12 @@ function SavedLogs(props) {
             {backLogList.map((element, i) => {
               return (
                 <Col sm={12} md={6} lg={4} key={i}>
-                  <LogCard
+                  <SavedLogCard
                     logTitle={element.logTitle}
                     logPlot={element.logPlot}
                     logReleaseDate={element.logReleaseDate}
                     logPoster={element.logPoster}
-                    logID={element.logID}
+                    logId={element.logId}
                   />
                 </Col>
               )
