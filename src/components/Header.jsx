@@ -49,7 +49,7 @@ function Header(props) {
         <Navbar.Brand className="mr-sm-6" href="/">🪓backLOG</Navbar.Brand>
         <SearchLog getSearchResult={getSearchResult} />
         <div className="authButtons">
-          <Nav.Link href="/Register">Register</Nav.Link>
+          {isAuth ? null : <Nav.Link href="/Register">Register</Nav.Link>}
           {isAuth ? <Nav.Link href="/Logout">Logout</Nav.Link> : <Nav.Link href="/Login">Login</Nav.Link>}
         </div>
       </Container>
