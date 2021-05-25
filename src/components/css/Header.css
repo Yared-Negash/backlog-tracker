@@ -1,3 +1,9 @@
-.authButtons{
-    display: block;
+#authButtonSection{
+    display: flex;
+}
+
+#authButtonSection Button {
+    background-color: #2A9D8F;
+    border-color: #2A9D8F;
+    color: white;
 }

@@ -3,6 +3,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav'
 import Container from 'react-bootstrap/Container';
 import SearchLog from "./SearchLog";
+import Button from 'react-bootstrap/Button';
 import { useHistory } from "react-router-dom";
 import "./css/Header.css"
 
@@ -48,9 +49,9 @@ function Header(props) {
       <Container fluid >
         <Navbar.Brand className="mr-sm-6" href="/">🪓backLOG</Navbar.Brand>
         <SearchLog getSearchResult={getSearchResult} />
-        <div className="authButtons">
-          {isAuth ? null : <Nav.Link href="/Register">Register</Nav.Link>}
-          {isAuth ? <Nav.Link href="/Logout">Logout</Nav.Link> : <Nav.Link href="/Login">Login</Nav.Link>}
+        <div id="authButtonSection">
+          {isAuth ? null : <Nav.Link href="/Register"><Button className="authButton">Register</Button></Nav.Link>}
+          {isAuth ? <Nav.Link href="/Logout">Logout</Nav.Link> : <Nav.Link href="/Login"><Button className="authButton">Login</Button></Nav.Link>}
         </div>
       </Container>
     </Navbar>);
