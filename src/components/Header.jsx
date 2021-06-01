@@ -1,7 +1,8 @@
 import { React, useState, useEffect } from "react";
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav'
-import NavDropdown from 'react-bootstrap/NavDropdown'
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import SearchLog from "./SearchLog";
 import Button from 'react-bootstrap/Button';
@@ -50,24 +51,29 @@ function Header(props) {
   return (
     <Navbar bg="dark" expand="lg" sticky="top">
       <Container fluid >
-        <Navbar.Brand className="mr-sm-6" href="/">
-          <img
-            src={BackLog_Logo}
-            height="60"
-            alt="🪓backLOG"
-          />
-        </Navbar.Brand>
-        <SearchLog getSearchResult={getSearchResult} />
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
+        <Col xs={1}>
+          <Navbar.Brand href="/">
+            <img
+              src={BackLog_Logo}
+              height="50px"
+              alt="🪓backLOG"
+            />
+          </Navbar.Brand>
+        </Col>
+        <Col xs={6}>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Col >
+              <SearchLog getSearchResult={getSearchResult} />
+            </Col>
+            <Nav navbarScroll className="mr-auto">
               <div id="authButtonSection">
                 {isAuth ? null : <Nav.Link href="/Register"><Button className="authButton">Register</Button></Nav.Link>}
                 {isAuth ? <Nav.Link href="/Logout"><Button className="authButton">Logout</Button></Nav.Link> : <Nav.Link href="/Login"><Button className="authButton">Login</Button></Nav.Link>}
               </div>
-          </Nav>
-        </Navbar.Collapse>
-
+            </Nav>
+          </Navbar.Collapse>
+        </Col>
       </Container>
     </Navbar>);
 }
