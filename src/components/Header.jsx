@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from "react";
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav'
+import NavDropdown from 'react-bootstrap/NavDropdown'
 import Container from 'react-bootstrap/Container';
 import SearchLog from "./SearchLog";
 import Button from 'react-bootstrap/Button';
@@ -57,10 +58,16 @@ function Header(props) {
           />
         </Navbar.Brand>
         <SearchLog getSearchResult={getSearchResult} />
-        <div id="authButtonSection">
-          {isAuth ? null : <Nav.Link href="/Register"><Button className="authButton">Register</Button></Nav.Link>}
-          {isAuth ? <Nav.Link href="/Logout"><Button className="authButton">Logout</Button></Nav.Link> : <Nav.Link href="/Login"><Button className="authButton">Login</Button></Nav.Link>}
-        </div>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+              <div id="authButtonSection">
+                {isAuth ? null : <Nav.Link href="/Register"><Button className="authButton">Register</Button></Nav.Link>}
+                {isAuth ? <Nav.Link href="/Logout"><Button className="authButton">Logout</Button></Nav.Link> : <Nav.Link href="/Login"><Button className="authButton">Login</Button></Nav.Link>}
+              </div>
+          </Nav>
+        </Navbar.Collapse>
+
       </Container>
     </Navbar>);
 }
