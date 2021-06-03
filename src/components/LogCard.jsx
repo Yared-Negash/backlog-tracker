@@ -36,9 +36,10 @@ function LogCard(props) {
             .then(
                 (result) => {
                     if (!result.addLogStatus) {
-                        alert("Issue adding to backLog. Please try again.");
+                        window.location.replace("/Register");
                         return;
                     }
+                    alert("Added to BackLog");
                 },
                 // Note: it's important to handle errors here
                 // instead of a catch() block so that we don't swallow
