@@ -56,7 +56,6 @@ function SavedLogCard(props) {
                 <Card.Body>
                     <Card.Title>{logTitle ? logTitle : "Title Not Found"}</Card.Title>
                     <Card.Text>{logReleaseDate ? logReleaseDate : ""}</Card.Text>
-                    <Card.Text>{logPlot ? logPlot : "Synopsis Not Found"}</Card.Text>
                     <Button variant="danger" onClick={removeBackLogHandler} >Remove from backLog</Button>
                 </Card.Body>
             </Card>

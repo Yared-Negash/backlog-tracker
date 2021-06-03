@@ -57,7 +57,6 @@ function LogCard(props) {
                 <Card.Body>
                     <Card.Title>{logTitle ? logTitle : "Title Not Found"}</Card.Title>
                     <Card.Text>{logReleaseDate ? logReleaseDate : ""}</Card.Text>
-                    <Card.Text>{logPlot ? logPlot : "Synopsis Not Found"}</Card.Text>
                     <Button variant="primary" onClick={addBackLogHandler} >Add to backLog</Button>
                 </Card.Body>
             </Card>
