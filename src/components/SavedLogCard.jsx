@@ -51,7 +51,7 @@ function SavedLogCard(props) {
     }
     return (
         <div>
-            <Card style={{ width: '18rem' }}>
+            <Card style={{ width: '18rem', margin: 'auto' }}>
                 <Card.Img variant="top" src={logPoster === "N/A" ? noPoster : logPoster} />
                 <Card.Body>
                     <Card.Title>{logTitle ? logTitle : "Title Not Found"}</Card.Title>
