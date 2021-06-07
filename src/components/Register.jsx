@@ -27,7 +27,13 @@ function Register() {
                 .then(
                     (result) => {
                         if (!result.registerStatus) {
-                            alert("A user with that email may already exist. Please try again or use a different email");
+                            switch(result.MSG){
+                                case 'Email already exists':
+                                    alert(`The email address you have entered is already registered. Please use a different email`);
+                                    break;
+                                default:
+                                    alert(`Error registering. Please try again`);
+                            }
                             return;
                         }
                         window.location.replace("/Login");
