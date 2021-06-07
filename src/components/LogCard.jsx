@@ -35,8 +35,17 @@ function LogCard(props) {
             .then(res => res.json())
             .then(
                 (result) => {
-                    if (!result.addLogStatus) {
-                        window.location.replace("/Register");
+                    if(!result.addLogStatus){
+                        switch(result.MSG){
+                            case 'User not logged in':
+                                window.location.replace("/Register");
+                                break;
+                            case 'Duplicate logs not allowed':
+                                alert(`${newLog.logTitle} already exists in your backLog`);
+                                break;
+                            default:
+                                alert(`Error adding to your backLog. Please try again.`);
+                        }
                         return;
                     }
                     alert("Added to BackLog");
