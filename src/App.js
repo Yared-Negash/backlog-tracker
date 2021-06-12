@@ -1,4 +1,5 @@
 import Header from "./components/Header"
+import Footer from "./components/Footer"
 import IntroJumbo from "./components/IntroJumbo"
 import LogList from "./components/LogList"
 import Register from './components/Register'
@@ -33,6 +34,7 @@ function App() {
           <Route path='/logout' exact component={Logout} />
           <Route path='/search'  exact component={LogList} />
           <Route path='/search/:id' component={LogList} />
+          <Footer />
         </Router>
       </BrowserRouter>
     </div>
