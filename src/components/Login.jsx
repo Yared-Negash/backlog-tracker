@@ -1,7 +1,11 @@
 import { useState, React } from 'react'
+import loginBackground from '../images/login_BOTW.png';
+
+import "./css/Login.css";
 const location = process.env.REACT_APP_LOCATION || 'http://localhost'
 const port = process.env.LOCATION || 3000
 const url = location.includes("localhost") ? `${location}:${port}/login` : `${location}/login`;
+
 
 function Login() {
     const [emailState, setEmailState] = useState("");
@@ -52,15 +56,17 @@ function Login() {
         setPasswordState(event.target.value);
     }
     return (
-        <div>
-            <h1>Login Page</h1>
-            <form onSubmit={loginHandler}>
-                <label htmlFor="email">Email Address:</label>
-                <input type="text" id="email" name="email" value={emailState} onChange={emailChangeHandler} required />
-                <label htmlFor="pwd">Password:</label>
-                <input type="password" id="pwd" name="pwd" value={passwordState} onChange={passwordChangeHandler} required />
-                <button type="submit" onClick={loginHandler}>Login</button>
-            </form>
+        <div id="loginBackground">
+            <div id="loginBox">
+                <h1>Login Page</h1>
+                <form onSubmit={loginHandler}>
+                    <label htmlFor="email">Email Address:</label>
+                    <input type="text" id="email" name="email" value={emailState} onChange={emailChangeHandler} required />
+                    <label htmlFor="pwd">Password:</label>
+                    <input type="password" id="pwd" name="pwd" value={passwordState} onChange={passwordChangeHandler} required />
+                    <button type="submit" onClick={loginHandler}>Login</button>
+                </form>
+            </div>
         </div>
     );
 }
