@@ -1,5 +1,6 @@
 import { useState, React } from 'react'
 import loginBackground from '../images/login_BOTW.png';
+import BackLog_Logo from '../images/backlog_logo.png'
 
 import "./css/Login.css";
 const location = process.env.REACT_APP_LOCATION || 'http://localhost'
@@ -58,7 +59,7 @@ function Login() {
     return (
         <div id="loginBackground">
             <div id="loginBox">
-                <h1>Login</h1>
+                <img id="login_icon" src={BackLog_Logo}></img>
                 <form onSubmit={loginHandler} class="loginForm">
                     <p>Email</p>
                     <input type="text" id="email" name="email" value={emailState} onChange={emailChangeHandler} placeholder="Email Address" required />
