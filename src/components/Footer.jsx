@@ -9,7 +9,7 @@ import Button from 'react-bootstrap/Button';
 import { useHistory } from "react-router-dom";
 import BackLog_Logo from '../images/backlog_logo.png'
 
-//import "./css/Footer.css"
+import "./css/Footer.css"
 
 const location = process.env.REACT_APP_LOCATION || 'http://localhost'
 const port = process.env.LOCATION || 3000
@@ -20,11 +20,11 @@ function Footer(props) {
   let history = useHistory();
 
   return (
-    <div>
-    <footer fluid>
-      &copy; {new Date().getFullYear()} Yared Negash: <a href="https://yared-negash.github.io/"> Github </a>
-    </footer>
-  </div>
+    <div class="footer">
+      <footer fluid>
+        &copy; {new Date().getFullYear()} Yared Negash: <a href="https://yared-negash.github.io/"> Github </a>
+      </footer>
+    </div>
   );
 }
 
