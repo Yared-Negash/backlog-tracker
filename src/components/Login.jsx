@@ -1,6 +1,7 @@
 import { useState, React } from 'react'
 import loginBackground from '../images/login_BOTW.png';
 import BackLog_Logo from '../images/backlog_logo.png'
+import Button from 'react-bootstrap/Button';
 
 import "./css/Login.css";
 const location = process.env.REACT_APP_LOCATION || 'http://localhost'
@@ -65,7 +66,10 @@ function Login() {
                     <input type="text" id="email" name="email" value={emailState} onChange={emailChangeHandler} placeholder="Email Address" required />
                     <p>Password</p>
                     <input type="password" id="pwd" name="pwd" value={passwordState} onChange={passwordChangeHandler} placeholder="Password" required />
-                    <button type="submit" onClick={loginHandler}>Login</button>
+                    <Button type="submit" onClick={loginHandler}>Login</Button>
+                    <div class="resetCred">
+                        <a href="#forgot"><p>Forgot Password?</p></a>
+                    </div>
                 </form>
             </div>
         </div>

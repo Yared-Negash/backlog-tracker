@@ -48,6 +48,14 @@
   color: white;
 }
 
+.loginForm Button {
+  background-color: #2A9D8F;
+  border-color: #2A9D8F;
+  color: white;
+  width: 80%;
+  margin-top: 5%;
+}
+
 #login_icon{
   height: 100px;
   width: 100px;
@@ -55,6 +63,12 @@
   margin-left: -50px;
   margin-top: -19%;
 }
+
+.resetCred p{
+  margin-top: 5%;
+  text-align: center !important;
+}
+
 /*
 input:-webkit-autofill {
   background: transparent !important;
