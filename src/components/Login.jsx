@@ -58,12 +58,12 @@ function Login() {
     return (
         <div id="loginBackground">
             <div id="loginBox">
-                <h1>Login Page</h1>
-                <form onSubmit={loginHandler}>
-                    <label htmlFor="email">Email Address:</label>
-                    <input type="text" id="email" name="email" value={emailState} onChange={emailChangeHandler} required />
-                    <label htmlFor="pwd">Password:</label>
-                    <input type="password" id="pwd" name="pwd" value={passwordState} onChange={passwordChangeHandler} required />
+                <h1>Login</h1>
+                <form onSubmit={loginHandler} class="loginForm">
+                    <p>Email</p>
+                    <input type="text" id="email" name="email" value={emailState} onChange={emailChangeHandler} placeholder="Email Address" required />
+                    <p>Password</p>
+                    <input type="password" id="pwd" name="pwd" value={passwordState} onChange={passwordChangeHandler} placeholder="Password" required />
                     <button type="submit" onClick={loginHandler}>Login</button>
                 </form>
             </div>

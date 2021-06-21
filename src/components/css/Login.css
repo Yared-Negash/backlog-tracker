@@ -5,13 +5,45 @@
 }
 
 #loginBox{
+  color: white;
     width: 320px;
     height:420px;
     position: relative;
-    background-color: blue;
+    background-color: #343a40;
     border-radius: 2%;
     display: block;
     top: 20%;
     margin-left: auto;
     margin-right: auto;
+}
+
+.loginForm{
+  position: relative;
+  display: block;
+  top: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.loginForm input{
+  width: 80%;
+  text-align: left;
+  border: none;
+  outline: none;
+  margin-bottom: 2%;
+  background-color: #343a40;
+  border-bottom: 1px solid;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.loginForm p{
+  width: 80%;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
 }
