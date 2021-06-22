@@ -14,6 +14,9 @@ function Register() {
     function registerHandler(event) {
         if (!emailState || !passwordState)
             alert(`Please fill in both entries`);
+        else if(!isEmail(emailState)){
+            alert(`The email you entered is not valid. Please try again.`)
+        }
         else {
             const options = {
                 method: "POST",
@@ -59,6 +62,10 @@ function Register() {
     }
     function passwordChangeHandler(event) {
         setPasswordState(event.target.value);
+    }
+    function isEmail(email){
+        const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
     }
     return (
         <div id="registerBackground">
