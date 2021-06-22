@@ -1,75 +1,96 @@
 #registerBackground {
-    background-image: linear-gradient(to right, #3204fdba, #6643ffba),url("./../../images/toystory_Register.jpeg");
-    background-size: 100%;
+  background-image: linear-gradient(to right, #3204fdba, #6643ffba),
+    url("./../../images/toystory_Register.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 90vh;
+}
+
+@media screen and (max-width: 768px) {
+  #registerBackground {
+    background-image: linear-gradient(to right, #3204fdba, #6643ffba);
     height: 90vh;
   }
-  
-  #loginBox{
+  #loginBox {
     color: white;
-      width: 320px;
-      height:420px;
-      position: relative;
-      background-color: #343a40;
-      border-radius: 2%;
-      display: block;
-      top: 20%;
-      margin-left: auto;
-      margin-right: auto;
-  }
-  
-  .loginForm{
+    width: 80%;
+    height: 420px;
     position: relative;
+    background-color: #343a40;
+    border-radius: 2%;
     display: block;
     top: 20%;
     margin-left: auto;
     margin-right: auto;
-    width: 100%;
   }
-  
-  .loginForm input{
-    width: 80%;
-    text-align: left;
-    border: none;
-    outline: none;
-    margin-bottom: 2%;
-    background-color: #343a40;
-    border-bottom: 1px solid;
-    color: white;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-  }
-  
-  .loginForm p{
-    width: 80%;
-    text-align: left;
-    margin-left: auto;
-    margin-right: auto;
-    color: white;
-  }
-  
-  .loginForm Button {
-    background-color: #2A9D8F;
-    border-color: #2A9D8F;
-    color: white;
-    width: 80%;
-    margin-top: 5%;
-  }
-  
-  #login_icon{
-    height: 100px;
-    width: 100px;
-    position: absolute;
-    margin-left: -50px;
-    margin-top: -19%;
-  }
-  
-  .resetCred p{
-    margin-top: 5%;
-    text-align: center !important;
-  }
-  
-  /*
+}
+
+#loginBox {
+  color: white;
+  width: 320px;
+  height: 420px;
+  position: relative;
+  background-color: #343a40;
+  border-radius: 2%;
+  display: block;
+  top: 20%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.loginForm {
+  position: relative;
+  display: block;
+  top: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.loginForm input {
+  width: 80%;
+  text-align: left;
+  border: none;
+  outline: none;
+  margin-bottom: 2%;
+  background-color: #343a40;
+  border-bottom: 1px solid;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.loginForm p {
+  width: 80%;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+}
+
+.loginForm Button {
+  background-color: #2a9d8f;
+  border-color: #2a9d8f;
+  color: white;
+  width: 80%;
+  margin-top: 5%;
+}
+
+#login_icon {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  margin-left: -50px;
+  margin-top: -19%;
+}
+
+.resetCred p {
+  margin-top: 5%;
+  text-align: center !important;
+}
+
+/*
   input:-webkit-autofill {
     background: transparent !important;
     outline: none;
