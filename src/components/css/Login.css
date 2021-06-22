@@ -4,6 +4,25 @@
   height: 90vh;
 }
 
+@media screen and (max-width: 768px) {
+  #loginBackground {
+    background-image: linear-gradient(to right, #3204fdba, #6643ffba);
+    height: 90vh;
+  }
+  #loginBox {
+    color: white;
+    width: 80%;
+    height: 420px;
+    position: relative;
+    background-color: #343a40;
+    border-radius: 2%;
+    display: block;
+    top: 20%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 #loginBox{
   color: white;
     width: 320px;
