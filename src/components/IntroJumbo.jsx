@@ -8,12 +8,14 @@ function IntroJumbo() {
     return (
         <div>
             <video autoPlay muted loop id="myVideo">
-                <source src={backgroundVideo} type="video/mp4" /> 
+                <source src={backgroundVideo} type="video/mp4" />
             </video>
             <div class="jumbotronBackground">
-                <h1>Is it getting cold? Go check the backLOG</h1>
-                <p>Use this site to track and complete movies, shows, and games in your <b>backLOG</b></p>
-                <p><i>🔥🪓🌲Don't play with fire kids🔥🪓🌲</i></p>
+                <div class="jumboText">
+                    <h1>Backlog</h1>
+                    <p>Search and track thousands of movies, shows, and games that you'll get to...eventually</p>
+                    <p><i>Create an account to become a backLog lumberjack🔥🪓🌲</i></p>
+                </div>
             </div>
         </div>
     )
