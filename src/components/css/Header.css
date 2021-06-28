@@ -7,3 +7,10 @@
     border-color: #2A9D8F;
     color: white;
 }
+
+.mobileSearch{
+    width: 100%;
+}
+.mobileSearch form{
+    width: 100%;
+}

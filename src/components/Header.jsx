@@ -1,7 +1,9 @@
 import { React, useState, useEffect } from "react";
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav'
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import Dropdown from 'react-bootstrap/Dropdown'
+import DropdownButton from 'react-bootstrap/DropdownButton'
+import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import SearchLog from "./SearchLog";
@@ -60,21 +62,34 @@ function Header(props) {
             />
           </Navbar.Brand>
         </Col>
-        <Col xs={6}>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Col >
-              <SearchLog getSearchResult={getSearchResult} />
-            </Col>
-            <Nav navbarScroll className="mr-auto">
-              <div id="authButtonSection">
-                {isAuth ? null : <Nav.Link href="/Register"><Button className="authButton">Register</Button></Nav.Link>}
-                {isAuth ? <Nav.Link href="/Logout"><Button className="authButton">Logout</Button></Nav.Link> : <Nav.Link href="/Login"><Button className="authButton">Login</Button></Nav.Link>}
-              </div>
-            </Nav>
-          </Navbar.Collapse>
-        </Col>
+        <div className="d-sm-none">
+          <Col xs={6}>
+            <DropdownButton
+              as={ButtonGroup}
+              id={`dropdown-button-drop-Account}`}
+              size="sm"
+              variant="info"
+              title="Account"
+            >
+              {isAuth ? null : <Dropdown.Item href="/Register">Register</Dropdown.Item>}
+              {isAuth ? <Dropdown.Item href="/Logout">Logout</Dropdown.Item> : <Dropdown.Item href="/Login">Login</Dropdown.Item>}
+
+            </DropdownButton>
+          </Col>
+        </div>
+        <div class="d-none d-md-block">
+          <Col md={11}>
+            <SearchLog getSearchResult={getSearchResult} />
+            <div id="authButtonSection">
+              {isAuth ? null : <Nav.Link href="/Register"><Button className="authButton">Register</Button></Nav.Link>}
+              {isAuth ? <Nav.Link href="/Logout"><Button className="authButton">Logout</Button></Nav.Link> : <Nav.Link href="/Login"><Button className="authButton">Login</Button></Nav.Link>}
+            </div>
+          </Col>
+        </div>
       </Container>
+      <div className="d-sm-none mobileSearch">
+          <SearchLog getSearchResult={getSearchResult} />
+      </div>
     </Navbar>);
 }
 
