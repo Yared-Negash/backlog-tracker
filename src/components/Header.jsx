@@ -78,17 +78,15 @@ function Header(props) {
           </Col>
         </div>
         <div class="d-none d-md-block">
-          <Col md={11}>
+          <div id="authButtonSection">
             <SearchLog getSearchResult={getSearchResult} />
-            <div id="authButtonSection">
-              {isAuth ? null : <Nav.Link href="/Register"><Button className="authButton">Register</Button></Nav.Link>}
-              {isAuth ? <Nav.Link href="/Logout"><Button className="authButton">Logout</Button></Nav.Link> : <Nav.Link href="/Login"><Button className="authButton">Login</Button></Nav.Link>}
-            </div>
-          </Col>
+            {isAuth ? null : <Nav.Link href="/Register"><Button className="authButton">Register</Button></Nav.Link>}
+            {isAuth ? <Nav.Link href="/Logout"><Button className="authButton">Logout</Button></Nav.Link> : <Nav.Link href="/Login"><Button className="authButton">Login</Button></Nav.Link>}
+          </div>
         </div>
       </Container>
       <div className="d-sm-none mobileSearch">
-          <SearchLog getSearchResult={getSearchResult} />
+        <SearchLog getSearchResult={getSearchResult} />
       </div>
     </Navbar>);
 }
