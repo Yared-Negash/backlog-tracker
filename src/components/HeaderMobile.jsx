@@ -69,7 +69,7 @@ function HeaderMobile(props) {
                     <DropdownButton
                         as={ButtonGroup}
                         id={`dropdown-button-drop-Account}`}
-                        size="sm"
+                        size="md"
                         variant="info"
                         title="👥"
                     >

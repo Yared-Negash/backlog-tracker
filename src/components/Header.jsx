@@ -53,7 +53,7 @@ function Header(props) {
   }, [])
   return (
     <div>
-      <div className="d-sm-none">
+      <div className="d-md-none">
         <HeaderMobile />
       </div>
       <div className="d-none d-md-block">
