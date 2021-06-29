@@ -166,3 +166,6 @@ About
 .eslintcache
 
 *.ps1
+
+#build directory (optimized version)
+build/
