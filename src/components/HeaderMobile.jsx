@@ -68,8 +68,9 @@ function HeaderMobile(props) {
                 <Col xs={3}>
                     <DropdownButton
                         as={ButtonGroup}
-                        id={`dropdown-button-drop-Account}`}
+                        id={`dropdown-button-drop-Account`}
                         size="md"
+                        menuAlign={{ lg: 'left' }}
                         variant="info"
                         title="👥"
                     >
