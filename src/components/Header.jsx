@@ -7,6 +7,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import SearchLog from "./SearchLog";
+import HeaderMobile from "./HeaderMobile"
 import Button from 'react-bootstrap/Button';
 import { useHistory } from "react-router-dom";
 import BackLog_Logo from '../images/backlog_logo.png'
@@ -51,44 +52,33 @@ function Header(props) {
       )
   }, [])
   return (
-    <Navbar bg="dark" expand="lg" sticky="top">
-      <Container fluid >
-        <Col xs={1}>
-          <Navbar.Brand href="/">
-            <img
-              src={BackLog_Logo}
-              height="50px"
-              alt="🪓backLOG"
-            />
-          </Navbar.Brand>
-        </Col>
-        <div className="d-sm-none">
-          <Col xs={6}>
-            <DropdownButton
-              as={ButtonGroup}
-              id={`dropdown-button-drop-Account}`}
-              size="sm"
-              variant="info"
-              title="Account"
-            >
-              {isAuth ? null : <Dropdown.Item href="/Register">Register</Dropdown.Item>}
-              {isAuth ? <Dropdown.Item href="/Logout">Logout</Dropdown.Item> : <Dropdown.Item href="/Login">Login</Dropdown.Item>}
-
-            </DropdownButton>
-          </Col>
-        </div>
-        <div class="d-none d-md-block">
-          <div id="authButtonSection">
-            <SearchLog getSearchResult={getSearchResult} />
-            {isAuth ? null : <Nav.Link href="/Register"><Button className="authButton">Register</Button></Nav.Link>}
-            {isAuth ? <Nav.Link href="/Logout"><Button className="authButton">Logout</Button></Nav.Link> : <Nav.Link href="/Login"><Button className="authButton">Login</Button></Nav.Link>}
-          </div>
-        </div>
-      </Container>
-      <div className="d-sm-none mobileSearch">
-        <SearchLog getSearchResult={getSearchResult} />
+    <div>
+      <div className="d-sm-none">
+        <HeaderMobile />
       </div>
-    </Navbar>);
+      <div className="d-none d-md-block">
+        <Navbar bg="dark" expand="lg" sticky="top">
+          <Container fluid >
+            <Col xs={1}>
+              <Navbar.Brand href="/">
+                <img
+                  src={BackLog_Logo}
+                  height="50px"
+                  alt="🪓backLOG"
+                />
+              </Navbar.Brand>
+            </Col>
+            <div class="d-none d-md-block">
+              <div id="authButtonSection">
+                <SearchLog getSearchResult={getSearchResult} />
+                {isAuth ? null : <Nav.Link href="/Register"><Button className="authButton">Register</Button></Nav.Link>}
+                {isAuth ? <Nav.Link href="/Logout"><Button className="authButton">Logout</Button></Nav.Link> : <Nav.Link href="/Login"><Button className="authButton">Login</Button></Nav.Link>}
+              </div>
+            </div>
+          </Container>
+        </Navbar>
+      </div>
+    </div>);
 }
 
 export default Header;
